@@ -1,4 +1,4 @@
-TARGET=RayppyBird.out
+TARGET=RayBird.out
 CC=g++
 LD=g++
 DEBUG=-s

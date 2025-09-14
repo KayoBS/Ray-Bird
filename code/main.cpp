@@ -2,7 +2,7 @@
 
 int main()
 {
-	const char* winName {"Rayppy Bird"};
+	const char* winName {"Ray Bird"};
 	const unsigned short winSize[2] {288,512};
 
 	ray::InitWindow( winSize[0], winSize[1], winName );
@@ -20,7 +20,7 @@ int main()
     ray::ClearBackground( ray::RAYWHITE );
 
     background.draw();
-    ray::DrawText( "Rayppy Bird is comming!!", 32, 32, 20, ray::BLACK );
+
     bird.draw();
     bird.sety( bird.gety() + 5 );
 
