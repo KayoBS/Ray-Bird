@@ -1,5 +1,7 @@
 #include "includes.hpp"
 
+float deltaTime = 0;
+
 int main() {
   const char *winName{"Ray Bird"};
   const unsigned short winSize[2]{288, 512};
@@ -20,10 +22,20 @@ int main() {
     background.draw();
 
     bird.draw();
-    bird.sety(bird.gety() + 5);
+    bird.sety(bird.gety() + (5 * deltaTime));
+
+    if (ray::IsKeyPressed(ray::KEY_SPACE)) {
+      bird.sety(bird.gety() - 60);
+      deltaTime = 0;
+    }
+
+    deltaTime += 0.03f;
 
     if (bird.gety() > winSize[1]) {
       bird.sety(-24);
+    } else if (bird.gety() < 0) {
+      bird.sety(8); // sumir com esse número mágico, fazer método para pegar o
+                    // tamanho do sprite
     }
 
     ray::EndDrawing();
