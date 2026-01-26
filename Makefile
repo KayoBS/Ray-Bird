@@ -2,7 +2,7 @@ TARGET=RayBird.out
 CC=g++
 LD=g++
 DEBUG=-s
-OBJS=main.cpp objects/entity.cpp
+OBJS=main.cpp ./code/objects/entity.cpp ./code/Window.cpp
 WARN=-Wall
 #CVER=-std=c99
 RAY=-lraylib
